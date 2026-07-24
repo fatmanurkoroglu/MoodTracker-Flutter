@@ -17,52 +17,53 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
   final List<Mood> _registeredMoods = [
     Mood(
       date: DateTime.now(),
-      moodNote: 'Here is note',
+      moodNote:
+          'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
       moodCategory: MoodCategory.amazing,
     ),
     Mood(
       date: DateTime.now(),
-      moodNote: 'Here is note',
+      moodNote: 'Here is note2',
       moodCategory: MoodCategory.amazing,
     ),
     Mood(
       date: DateTime.now(),
-      moodNote: 'Here is note',
+      moodNote: 'Here is note3',
       moodCategory: MoodCategory.amazing,
     ),
     Mood(
       date: DateTime.now(),
-      moodNote: 'Here is note',
+      moodNote: 'Here is note4',
       moodCategory: MoodCategory.amazing,
     ),
     Mood(
       date: DateTime.now(),
-      moodNote: 'Here is note',
+      moodNote: 'Here is note5',
       moodCategory: MoodCategory.amazing,
     ),
     Mood(
       date: DateTime.now(),
-      moodNote: 'Here is note',
+      moodNote: 'Here is note6',
       moodCategory: MoodCategory.amazing,
     ),
     Mood(
       date: DateTime.now(),
-      moodNote: 'Here is note',
+      moodNote: 'Here is note7',
       moodCategory: MoodCategory.amazing,
     ),
     Mood(
       date: DateTime.now(),
-      moodNote: 'Here is note',
+      moodNote: 'Here is note8',
       moodCategory: MoodCategory.amazing,
     ),
     Mood(
       date: DateTime.now(),
-      moodNote: 'Here is note',
+      moodNote: 'Here is note9',
       moodCategory: MoodCategory.amazing,
     ),
     Mood(
       date: DateTime.now(),
-      moodNote: 'Here is note',
+      moodNote: 'Here is note10',
       moodCategory: MoodCategory.amazing,
     ),
   ];
@@ -72,6 +73,7 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Mood Tracker'),
+        backgroundColor: Colors.blueGrey,
         actions: [
           Row(
             children: [
@@ -86,12 +88,15 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
         ],
       ),
 
-      body: Column(
-        children: [
-          DaysRow(moods: _registeredMoods),
-          SizedBox(height: 16),
-          MoodsList(),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.only(top: 16),
+        child: Column(
+          children: [
+            DaysRow(moods: _registeredMoods),
+            SizedBox(height: 16),
+            MoodsList(moods: _registeredMoods),
+          ],
+        ),
       ),
     );
   }

@@ -10,8 +10,10 @@ class DayCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsetsGeometry.symmetric(horizontal: 4),
+
+      //TODO: make this cards pressable somehow and it should lead to chosen days' moods screen.
       child: CircleAvatar(
-        radius: 24,
+        radius: 30,
         backgroundColor: Colors.lightBlueAccent,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -21,8 +23,8 @@ class DayCard extends StatelessWidget {
               date,
               style: TextStyle(
                 color: Colors.black87,
-                height: 1,
-                fontSize: 24,
+                height: 1.1,
+                fontSize: 22,
                 fontWeight: FontWeight.normal,
               ),
             ),

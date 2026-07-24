@@ -16,19 +16,31 @@ class DaysRow extends StatelessWidget {
     return SizedBox(
       height: 64,
       width: 388,
-      child: ListView.builder(
-        itemCount: moods.length,
-        itemBuilder: (context, index) {
-          var day = today.subtract(Duration(days: index)).day;
-          var dayNameIndex = today.subtract(Duration(days: index)).weekday;
+      child: Row(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: 21,
+              itemBuilder: (context, index) {
+                var day = today.subtract(Duration(days: index)).day;
+                var dayNameIndex = today
+                    .subtract(Duration(days: index))
+                    .weekday;
 
-          return DayCard(
-            date: day.toString(),
-            dayName: weekDays[dayNameIndex - 1],
-          );
-        },
-        scrollDirection: Axis.horizontal,
-        reverse: true,
+                return DayCard(
+                  date: day.toString(),
+                  dayName: weekDays[dayNameIndex - 1],
+                );
+              },
+              scrollDirection: Axis.horizontal,
+              reverse: true,
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.date_range_sharp, size: 32),
+          ),
+        ],
       ),
     );
   }
