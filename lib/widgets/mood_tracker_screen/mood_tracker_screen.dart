@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mood_tracker_app_ftmnr/models/mood.dart';
 import 'package:mood_tracker_app_ftmnr/widgets/mood_tracker_screen/days_row/days_row.dart';
 import 'package:mood_tracker_app_ftmnr/widgets/mood_tracker_screen/moods_list/moods_list.dart';
+import 'package:mood_tracker_app_ftmnr/widgets/mood_tracker_screen/add_edit_mood/add_edit_mood.dart';
 
 class MoodTrackerScreen extends StatefulWidget {
   const MoodTrackerScreen({super.key});
@@ -82,7 +83,12 @@ class _MoodTrackerScreenState extends State<MoodTrackerScreen> {
                 icon: Icon(Icons.question_mark_rounded),
               ),
               const SizedBox(width: 8),
-              IconButton(onPressed: () {}, icon: Icon(Icons.add_box_rounded)),
+              IconButton(
+                onPressed: () {
+                  addEditMoodBottomSheet(context);
+                },
+                icon: Icon(Icons.add_box_rounded),
+              ),
             ],
           ),
         ],

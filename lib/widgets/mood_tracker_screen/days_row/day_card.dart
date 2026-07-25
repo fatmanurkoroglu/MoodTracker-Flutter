@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mood_tracker_app_ftmnr/widgets/mood_tracker_screen/add_edit_mood/add_edit_mood.dart';
 
 class DayCard extends StatelessWidget {
   const DayCard({super.key, required this.date, required this.dayName});
@@ -12,27 +13,33 @@ class DayCard extends StatelessWidget {
       padding: EdgeInsetsGeometry.symmetric(horizontal: 4),
 
       //TODO: make this cards pressable somehow and it should lead to chosen days' moods screen.
-      child: CircleAvatar(
-        radius: 30,
-        backgroundColor: Colors.lightBlueAccent,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+      child: InkWell(
+        onTap: () {
+          addEditMoodBottomSheet(context);
+        },
+        borderRadius: BorderRadius.circular(30),
+        child: CircleAvatar(
+          radius: 30,
+          backgroundColor: Colors.lightBlueAccent,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
 
-          children: [
-            Text(
-              date,
-              style: TextStyle(
-                color: Colors.black87,
-                height: 1.1,
-                fontSize: 22,
-                fontWeight: FontWeight.normal,
+            children: [
+              Text(
+                date,
+                style: TextStyle(
+                  color: Colors.black87,
+                  height: 1.1,
+                  fontSize: 22,
+                  fontWeight: FontWeight.normal,
+                ),
               ),
-            ),
-            Text(
-              dayName,
-              style: TextStyle(fontSize: 12, height: 1, color: Colors.white),
-            ),
-          ],
+              Text(
+                dayName,
+                style: TextStyle(fontSize: 12, height: 1, color: Colors.white),
+              ),
+            ],
+          ),
         ),
       ),
     );
